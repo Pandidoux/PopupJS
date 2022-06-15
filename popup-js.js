@@ -469,8 +469,8 @@ class PopupJS {
             if ( !cancel_button.classList.contains('popup-button') ){ cancel_button.classList.add('popup-button'); }
             if ( !cancel_button.classList.contains('popup-cancel') ){ cancel_button.classList.add('popup-cancel'); }
             // Set content
-            if ( title.innerText != this.title_text ){ title.innerText = this.title_text; }
-            if ( content.innerText != this.content_text ){ content.innerText = this.content_text; }
+            if ( title.innerHTML != this.title_text ){ title.innerHTML = this.title_text; }
+            if ( content.innerHTML != this.content_text ){ content.innerHTML = this.content_text; }
             if ( close_button.innerText != 'x' ){ close_button.innerText = 'x'; }
             let shadow = (this.shadow_show) ? '0 0 15px 5px rgb(0 0 0 / 30%)' : 'none';
             let radius = (Number.isInteger(this.radius)) ? this.radius+'px' : this.radius;
@@ -574,6 +574,7 @@ class PopupJS {
                 border-top-left-radius:inherit;
                 border-top-right-radius:inherit;
                 background:`+this.color_main+`;
+                min-height:40px;
             }
             #`+this.id+`>.popup>.popup-header>.popup-title{
                 width:100%;
@@ -596,6 +597,7 @@ class PopupJS {
                 cursor:pointer;
             }
             #`+this.id+`>.popup>.popup-content{
+                width: 100%;
                 padding:10px;
                 max-height:calc(`+this.height+`px);
                 overflow-y:auto;
@@ -613,6 +615,7 @@ class PopupJS {
                 border-bottom-left-radius:inherit;
                 border-bottom-right-radius:inherit;
                 background:`+this.color_main+`;
+                min-height:40px;
             }
             #`+this.id+`>.popup>.popup-footer>.popup-button{
                 min-width:50px;
@@ -625,7 +628,7 @@ class PopupJS {
                 border-width:2px;
                 border-color:`+this.color_secondary+`;
                 border-radius:5px;
-                font-size:14px;
+                font-size:16px;
                 font-weight:bold;
             }
             #`+this.id+`>.popup>.popup-footer>.popup-button.popup-cancel.popup-hidden{display:none;}
