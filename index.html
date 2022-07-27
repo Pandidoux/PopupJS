@@ -6,8 +6,8 @@
     <title>PopupJS examples</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <!-- <script src='popup-js.js'></script> -->
-    <script src='popup-js.min.js'></script>
+    <script src='popup-js.js'></script>
+    <!-- <script src='popup-js.min.js'></script> -->
 
 </head>
 <body>
@@ -25,13 +25,13 @@
             color_main: 'limegreen',
             color_secondary: 'white',
             draggable: true,
-            modal_show:  false,
+            modal_show: false,
             modal_close: false,
             position: 'left',
-            header_show: true,
+            title_show: true,
             title_text: "myPopup1",
             content_text: "Bonjour ! :)",
-            buttonclose_show:  true,
+            buttonclose_show: true,
             buttonvalidate_show: false,
             buttoncancel_show: false,
         };
@@ -48,13 +48,13 @@
             color_main: '#0AF',
             color_secondary: '#FFF',
             draggable: true,
-            modal_show:  false,
+            modal_show: false,
             modal_close: false,
             position: 'top',
-            header_show: true,
+            title_show: true,
             title_text: "myPopup2: Information",
             content_text: "Lorem ipsum dolor sit amet,\n consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            buttonclose_show:  true,
+            buttonclose_show: true,
             buttonvalidate_show: false,
             buttoncancel_show: false,
         };
@@ -79,14 +79,14 @@
             height: 80,
             radius: 5,
             draggable: false,
-            modal_show:  false,
+            modal_show: false,
             modal_close: false,
             position: 'anchor',
             anchor_target: '#anchor_element',
             anchor_side: 'auto',
-            header_show: false,
+            title_show: false,
             content_text: "myPopup4: Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            buttonclose_show:  false,
+            buttonclose_show: false,
             buttonvalidate_show: false,
             buttoncancel_show: false,
         };
@@ -110,12 +110,12 @@
             height: 200,
             radius: 10,
             draggable: true,
-            modal_show:  false,
+            modal_show: false,
             modal_close: false,
             position: 'bottomright',
-            header_show: true,
+            title_show: true,
             title_text: 'myPopup5',
-            buttonclose_show:  true,
+            buttonclose_show: true,
             buttonvalidate_show: true,
             buttonvalidate_text: 'Validate !',
             buttonvalidate_callback: function(){ console.log('Execute Validate !'); },
@@ -137,13 +137,13 @@
             color_main: 'darkorange',
             color_secondary: 'yellow',
             draggable: false,
-            modal_show:  true,
+            modal_show: true,
             modal_close: true,
             position: 'center',
-            header_show: true,
+            title_show: true,
             title_text: 'myPopup3: Dialog box',
             content_text: "Lorem ipsum dolor sit amet,\n consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDo something ?",
-            buttonclose_show:  false,
+            buttonclose_show: false,
             buttonvalidate_show: true,
             buttonvalidate_text: 'Yes !!!',
             buttonvalidate_callback: function(){ console.log('Yes'); },

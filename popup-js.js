@@ -66,7 +66,7 @@ class PopupJS {
             position: undefined, // {String} Popup postion center | fullscreen | top | bottom | left | right | topleft | topright | bottomleft | bottomright
             anchor_target: undefined, // {String} Anchor selector for the posittion:'anchor'
             anchor_side: undefined, // {String} Popup placement side for position:'anchor' top | bottom | left | right | topleft | topright | bottomleft | bottomright | center
-            header_show: undefined, // {Boolean} Display popup header
+            title_show: undefined, // {Boolean} Display popup header
             title_text: undefined, // {String} Popup title text
             content_text: undefined, // {String} Popup content text
             buttonclose_show: undefined, // {Boolean} Display close button [x]
@@ -147,9 +147,9 @@ class PopupJS {
         } else { popup.modal_show = false; }
 
         // Display popup header (default: true)
-        if ( options!==undefined && options.header_show!==undefined ) {
-            popup.header_show = options.header_show;
-        } else { popup.header_show = true; }
+        if ( options!==undefined && options.title_show!==undefined ) {
+            popup.title_show = options.title_show;
+        } else { popup.title_show = true; }
 
         // Popup title text (default: Title...)
         if ( options!==undefined && options.title_text!==undefined ) {
@@ -232,7 +232,7 @@ class PopupJS {
             if ( this.html === null ){ this.html=document.createElement('div'); }
             let modal = document.querySelector('#'+this.id+'>.popup-modal');
             if ( modal === null ){ modal=document.createElement('div'); }
-            if ( this.modal_close && this.buttonclose_show ){
+            if ( this.modal_close && !this.buttonclose_show ){
                 modal.addEventListener('click', this.close); // Click on modal to close
             } else {
                 modal.removeEventListener('click', this.close); // Click on modal do nothing
@@ -246,7 +246,7 @@ class PopupJS {
             let close_button = document.querySelector('#'+this.id+'>.popup>.popup-header>.popup-close');
             if ( close_button === null ){
                 close_button=document.createElement('div');
-                if ( this.header_show && this.buttonclose_show ){ close_button.addEventListener( 'click', this.close ); }
+                if ( this.title_show && this.buttonclose_show ){ close_button.addEventListener( 'click', this.close ); }
             }
             let content = document.querySelector('#'+this.id+'>.popup>.popup-content');
             if ( content === null ){ content=document.createElement('div'); }
@@ -267,7 +267,7 @@ class PopupJS {
             this.html.appendChild(modal); // Add modal
             this.html.appendChild(popup); // Add popup
             popup.appendChild(header);
-            if ( this.header_show ){
+            if ( this.title_show ){
                 header.appendChild(title);
             } else {
                 if ( header.hasChildNodes(title) ) { title.remove(); }
@@ -574,7 +574,7 @@ class PopupJS {
                 border-top-left-radius:inherit;
                 border-top-right-radius:inherit;
                 background:`+this.color_main+`;
-                min-height:40px;
+                /*min-height:40px;*/
             }
             #`+this.id+`>.popup>.popup-header>.popup-title{
                 width:100%;
@@ -597,7 +597,6 @@ class PopupJS {
                 cursor:pointer;
             }
             #`+this.id+`>.popup>.popup-content{
-                width: 100%;
                 padding:10px;
                 max-height:calc(`+this.height+`px);
                 overflow-y:auto;
@@ -615,7 +614,7 @@ class PopupJS {
                 border-bottom-left-radius:inherit;
                 border-bottom-right-radius:inherit;
                 background:`+this.color_main+`;
-                min-height:40px;
+                /*min-height:40px;*/
             }
             #`+this.id+`>.popup>.popup-footer>.popup-button{
                 min-width:50px;

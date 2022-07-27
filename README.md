@@ -50,9 +50,9 @@ The PopupJS class act as a popup manager.
 | `position` | Position of the popup relative to the page (center \| fullscreen \| anchor \| top \| bottom \| left \| right \| topleft \| topright \| bottomleft \| bottomright) | {String} | "center" |
 | `anchor_target` | Anchor element for the popup placement when `position="anchor"` | {String} (js selector) | null |
 | `anchor_side` | Popup placement side relative to the anchor element (auto \| center \| top \| bottom \| left \| right \| topleft \| topright \| bottomleft \| bottomright) | {String} | "auto" |
-| `header_show` | Show the popup header | {String} | true |
-| `title_text` | Title text (HTML) | {String} | "Title" |
-| `content_text` | Content text (HTML) | {String} | "Lorem ipsum..." |
+| `title_show` | Show the popup title | {String} | true |
+| `title_text` | Title text | {String} | "Title" |
+| `content_text` | Content text | {String} | "Lorem ipsum..." |
 | `buttonclose_show` | Display close button in the header | {Boolean} | true |
 | `buttonvalidate_show` | Display Validate button in the footer (ferme le popup) | {Boolean} | false |
 | `buttonvalidate_text` | Validate button text | {String} | "Ok" |
@@ -92,7 +92,7 @@ var options = {
     modal_show: false,
     modal_close: false,
     position: 'center',
-    header_show: true,
+    title_show: true,
     title_text: 'Box 1',
     buttonclose_show: true,
     buttonvalidate_show: true,
@@ -131,7 +131,7 @@ To create an annotation popup on an element :
 var popupjs = new PopupJS();
 
 var options = {
-    header_show: false,
+    title_show: false,
     buttonclose_show: false,
     buttoncancel_show: false,
     position: 'anchor',
