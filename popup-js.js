@@ -199,15 +199,15 @@ class PopupJS {
         } else { popup.buttoncancel_text = 'Cancel'; }
 
         // Function triggered by the Cancel button (default: null )
-        if ( options!==undefined && options.cancel_callback!==undefined ) {
-            if ( typeof options.cancel_callback === 'function') {
-                popup.cancel_callback = options.cancel_callback;
+        if ( options!==undefined && options.buttoncancel_callback!==undefined ) {
+            if ( typeof options.buttoncancel_callback === 'function') {
+                popup.buttoncancel_callback = options.buttoncancel_callback;
             } else {
-                console.warn('Option cancel_callback invalid');
-                popup.cancel_callback = null;
+                console.warn('Option buttoncancel_callback invalid');
+                popup.buttoncancel_callback = null;
             }
         } else {
-            popup.cancel_callback = null;
+            popup.buttoncancel_callback = null;
         }
 
         // Popup postion (default: center)
